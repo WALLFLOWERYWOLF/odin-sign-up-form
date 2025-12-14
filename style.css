@@ -9,9 +9,10 @@
 *::after,
 *::before {
   --create-account-btn-clr: #596d48;
-  --input-border-clr: #e5e7eb;
+  --input-border-clr: #e6e8ec;
   --input-border-clr-invalid: #ff0000;
   --input-border-clr-focused: #0000ff; /* should have a little box-shadow as well */
+  --hero-bg-clr: #f9fafb;
   box-sizing: border-box;
   padding: 0;
   margin: 0;
@@ -38,6 +39,8 @@
 .main {
   width: 65%;
   height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .brand-banner {
@@ -70,4 +73,90 @@
 
 .sidebar-footer {
   text-align: center;
+}
+
+.hero-container {
+  background-color: var(--hero-bg-clr);
+  padding: 180px 50px 80px;
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+
+.hero-container > * {
+  width: 80%;
+}
+
+.hero-container > p:last-child {
+  margin-top: 30px;
+}
+
+.form-container,
+.button-container {
+  padding: 25px 50px;
+}
+
+form {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 25px;
+  width: 80%;
+  gap: 5%;
+}
+
+form > div {
+  width: 45%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3px;
+  min-width: 300px;
+  margin-bottom: 25px;
+}
+
+form > div > * {
+  width: 100%;
+}
+
+label {
+  font-size: 0.9rem;
+  letter-spacing: 0.1rem;
+  font-weight: 500;
+}
+
+input {
+  height: 2.4rem;
+  font-size: 1.2rem;
+  padding: 5px;
+  border: 1px solid var(--input-border-clr);
+  border-radius: 5px;
+}
+
+input:focus {
+  outline: none;
+  border: 2px solid var(--input-border-clr-focused);
+}
+
+/* input:invalid {
+  border: 2px solid var(--input-border-clr-invalid);
+} */
+
+.button-container {
+  font-size: 1.2rem;
+  background-color: var(--hero-bg-clr);
+  flex-grow: 1;
+}
+
+.submit-button {
+  color: white;
+  background-color: var(--create-account-btn-clr);
+  padding: 15px 60px;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-bottom: 40px;
+}
+
+.main a {
+  color: var(--create-account-btn-clr);
+  font-weight: 600;
+  text-decoration: none;
 }
