@@ -25,7 +25,14 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: stretch;
+}
+
+.container > * {
+  flex-grow: 1;
+}
+
+form > div {
+  flex-grow: 1;
 }
 
 .sidebar {
@@ -113,7 +120,7 @@ form > div {
   display: flex;
   flex-wrap: wrap;
   gap: 3px;
-  min-width: 200px;
+  min-width: 245px;
   margin-bottom: 25px;
 }
 
@@ -165,4 +172,19 @@ input:focus {
   color: var(--create-account-btn-clr);
   font-weight: 600;
   text-decoration: none;
+}
+
+input + span {
+  position: relative;
+}
+
+input:required + span::after {
+  font-size: 0.8rem;
+  position: absolute;
+  content: "required";
+  color: white;
+  background-color: var(--create-account-btn-clr);
+  padding: 4px 8px;
+  top: -4.2rem;
+  right: 0.5rem;
 }
