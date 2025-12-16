@@ -142,15 +142,42 @@ input {
   border-radius: 5px;
 }
 
+input + span {
+  position: relative;
+}
+
+input:required + span::after {
+  font-size: 0.8rem;
+  position: absolute;
+  content: "required";
+  color: white;
+  background-color: var(--create-account-btn-clr);
+  padding: 4px 8px;
+  top: -4.2rem;
+  right: 0.5rem;
+}
+
 input:focus {
   outline: none;
   border: 2px solid var(--input-border-clr-focused);
   box-shadow: 2px 2px 8px -2px #808080;
 }
 
-/* input:invalid {
+input:valid {
+  border: 2px solid var(--create-account-btn-clr);
+}
+
+input:placeholder-shown:invalid {
+  border: 2px solid var(--input-border-clr);
+}
+
+input:invalid:focus {
+  border: 2px solid var(--input-border-clr-focused);
+}
+
+input:invalid {
   border: 2px solid var(--input-border-clr-invalid);
-} */
+}
 
 .button-container {
   font-size: 1.2rem;
@@ -172,19 +199,4 @@ input:focus {
   color: var(--create-account-btn-clr);
   font-weight: 600;
   text-decoration: none;
-}
-
-input + span {
-  position: relative;
-}
-
-input:required + span::after {
-  font-size: 0.8rem;
-  position: absolute;
-  content: "required";
-  color: white;
-  background-color: var(--create-account-btn-clr);
-  padding: 4px 8px;
-  top: -4.2rem;
-  right: 0.5rem;
 }
